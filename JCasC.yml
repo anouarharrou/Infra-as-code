@@ -1,8 +1,8 @@
 jobs:
   - script: >
-      folder('ocre-dev')
+      folder('VCS')
   - script: >
-      pipelineJob('ocre-dev/Create-Infra') {
+      pipelineJob('VCS/INFRA') {
             parameters {
                 stringParam("GOAL", "plan", "plan/apply/cleanup")
             }        
@@ -25,7 +25,7 @@ jobs:
       }
 
   - script: >
-      pipelineJob('ocre-dev/appli-deploy') {    
+      pipelineJob('VCS/DEPLOY_APPLI') {    
             definition {
               cpsScm {
                   scriptPath 'HARRY/dev/CD/Jenkinsfile-appli'
@@ -45,7 +45,73 @@ jobs:
       }
       
   - script: >
-      pipelineJob('ocre-dev/web-deploy') {   
+      pipelineJob('VCS/DEPLOY_WEB') {   
+            definition {
+              cpsScm {
+                  scriptPath 'HARRY/dev/CD/Jenkinsfile-web'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://github.com/anouarharrou/Infra-as-code.git' 
+                            credentials('github')
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }      
+
+    # second folder  
+  - script: >
+      folder('KUBE')
+  - script: >
+      pipelineJob('KUBE/INFRA') {
+            parameters {
+                stringParam("GOAL", "plan", "plan/apply/cleanup")
+            }        
+            definition {
+              cpsScm {
+                  scriptPath 'HARRY/dev/CD/Jenkinsfile-infra'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://github.com/anouarharrou/Infra-as-code.git' 
+                            credentials('github')
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }
+
+  - script: >
+      pipelineJob('KUBE/DEPLOY_APPLI') {    
+            definition {
+              cpsScm {
+                  scriptPath 'HARRY/dev/CD/Jenkinsfile-appli'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://github.com/anouarharrou/Infra-as-code.git' 
+                            credentials('github')
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }
+      
+  - script: >
+      pipelineJob('KUBE/DEPLOY_WEB') {   
             definition {
               cpsScm {
                   scriptPath 'HARRY/dev/CD/Jenkinsfile-web'
