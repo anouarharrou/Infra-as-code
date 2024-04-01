@@ -1,0 +1,45 @@
+LAYER_PATH="acid/dev/IaC/Terraform"
+COMMON_PATH="acid/common/Terraform"
+
+podTemplate(
+  inheritFrom: 'jenkins-inbound-agent',
+  containers: [containerTemplate(name: 'terraform-container', image: 'kube9-dtr-dev.fr.world.socgen/byo-ad016-dev-acid/terraform:1.4.2', alwaysPullImage: false, ttyEnabled: true, command: 'cat')]
+) {
+  node(POD_LABEL) {
+    stage('checkout scm') {
+        checkout scm
+    }
+      stage("${GOAL} App"){
+        container('terraform-container') {
+          withCredentials([
+            string(credentialsId: 'ocre_homol_account_id', variable: 'OCRE_ACCOUNT_ID'),
+            usernamePassword(credentialsId: 'ocre_homol_terraform_id', passwordVariable: 'OCRE_CLIENT_SECRET', usernameVariable: 'OCRE_CLIENT_ID'),
+            usernamePassword(credentialsId: 'ocre_homol_bucket_id', passwordVariable: 'OCRE_SECRET_ACCESS_KEY', usernameVariable: 'OCRE_ACCESS_KEY_ID')
+          ]) {
+              echo 'Applying OCRE manifests...'
+              sh """
+                export ACCOUNT_ID=${OCRE_ACCOUNT_ID}
+                export CLIENT_ID=${OCRE_CLIENT_ID}
+                export CLIENT_SECRET='${OCRE_CLIENT_SECRET}'
+                export AWS_ACCESS_KEY_ID=${OCRE_ACCESS_KEY_ID}
+                export AWS_SECRET_ACCESS_KEY=${OCRE_SECRET_ACCESS_KEY}
+                
+                cd ${COMMON_PATH}
+
+                echo -----------------------TERRAFORM-INIT------------------------------------
+                terraform init -backend-config=${workspace}/${LAYER_PATH}/backend.tfbackend
+
+                echo -----------------------TERRAFORM-$GOAL-----------------------------------
+                if [[ "$GOAL" == "apply" ]]; then
+                  terraform apply  -var-file=${workspace}/${LAYER_PATH}/terraform.tfvars -auto-approve -no-color
+                elif [[ "$GOAL" == "plan" ]]; then
+                  terraform plan -var-file=${workspace}/${LAYER_PATH}/terraform.tfvars -no-color
+                elif [[ "$GOAL" == "cleanup" ]]; then
+                  terraform destroy -var-file=${workspace}/${LAYER_PATH}/terraform.tfvars -auto-approve -no-color
+                fi
+              """
+            }
+          }
+    }
+  }
+}

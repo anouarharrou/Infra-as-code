@@ -1,0 +1,3 @@
+endpoint = "https://objs3parlow02.fr.world.socgen:443"
+bucket   = "ocre-bucket"
+key      = "ocre-dev/terraform.tfstate"

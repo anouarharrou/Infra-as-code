@@ -1,0 +1,5 @@
+---
+- hosts: ocre_appli 
+  roles:
+    - { role: ../../../common/Ansible/deploy_app_server }
+    - { role: ../../../common/Ansible/install_iis }

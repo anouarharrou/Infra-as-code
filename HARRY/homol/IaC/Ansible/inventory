@@ -1,0 +1,17 @@
+[ocre_hosts:children]
+ocre_appli
+ocre_web
+
+[ocre_appli]
+171-92-134-170.compute.eu-fr-north.cloud.socgen
+
+[ocre_web]
+171-92-130-116.compute.eu-fr-north.cloud.socgen
+
+[ocre_hosts:vars]
+ansible_connection=winrm 
+ansible_winrm_server_cert_validation=ignore
+ansible_ssh_port=5985
+ansible_winrm_transport=kerberos
+ansible_port=5985
+ansible_winrm_kinit_mode=managed

@@ -1,0 +1,17 @@
+[ocre_hosts:children]
+ocre_appli
+ocre_web
+
+[ocre_appli]
+182-6-35-23.compute.eu-fr-paris.cloud.socgen
+
+[ocre_web]
+182-6-33-251.compute.eu-fr-paris.cloud.socgen
+
+[ocre_hosts:vars]
+ansible_connection=winrm 
+ansible_winrm_server_cert_validation=ignore
+ansible_ssh_port=5985
+ansible_winrm_transport=kerberos
+ansible_port=5985
+ansible_winrm_kinit_mode=managed

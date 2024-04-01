@@ -1,0 +1,98 @@
+ocre_dir: "D:\\Applis\\OCRE"
+
+app_server_parameters:
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/ACPWebservice-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\ACPWebservices.zip"
+    dest_dir: "ACPWebservices"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/GIT-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\ACPGui_Git.zip"
+    dest_dir: "ACPGui_Git"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/ACPSnapshot-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\ACPSnapShot.zip"
+    dest_dir: "ACPSnapShot"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/DirectoryServices-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\DirectoryServices.zip"
+    dest_dir: "DirectoryServices"
+
+  # - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/AxeDMSAdaptor-9.7.zip"
+  #   download_dir: "D:\\Applis\\OCRE\\AxeDMSAdaptor.zip"
+  #   dest_dir: "AxeDMSAdaptor"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/AxeWorkflowEngine-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\ACPWorkflowEngine.zip"
+    dest_dir: "ACPWorkflowEngine"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/xml-access-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\XmlAccessAPI.zip"
+    dest_dir: "XmlAccessAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/additionnal-data-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\AdditionnalDataManagerAPI.zip"
+    dest_dir: "AdditionnalDataManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/eligibility-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\EligibilityManagerAPI.zip"
+    dest_dir: "EligibilityManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/license-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\LicenseManagerAPI.zip"
+    dest_dir: "LicenseManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/signature-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\SignatureManagerAPI.zip"
+    dest_dir: "SignatureManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/access-right-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\AccessRightManagerAPI.zip"
+    dest_dir: "AccessRightManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/administration-services-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\AdministrationServicesManagerAPI.zip"
+    dest_dir: "AdministrationServicesManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/back-testing-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\BacktestingManagerAPI.zip"
+    dest_dir: "BacktestingManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/collateral-allocation-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\CollateralAllocationManagerAPI.zip"
+    dest_dir: "CollateralAllocationManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/export-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\ExportManagerAPI.zip"
+    dest_dir: "ExportManagerAPI"                                                        
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/financial-engine-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\FinancialEngineManagerAPI.zip"
+    dest_dir: "FinancialEngineManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/limit-monitoring-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\LimitMonitoringManagerAPI.zip"
+    dest_dir: "LimitMonitoringManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/multi-object-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\MultiObjectManagerAPI.zip"
+    dest_dir: "MultiObjectManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/recovery-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\RecoveryManagerAPI.zip"
+    dest_dir: "RecoveryManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/reporting-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\ReportingManagerAPI.zip"
+    dest_dir: "ReportingManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/scoring-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\ScoringManagerAPI.zip"
+    dest_dir: "ScoringManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/user-manager-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\UserManagerAPI.zip"
+    dest_dir: "UserManagerAPI"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AppServer/license-user-connection-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\LicenseUserconnectionAPI.zip"
+    dest_dir: "LicenseUserconnectionAPI"                

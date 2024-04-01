@@ -1,0 +1,26 @@
+iis_packages:
+  - Web-Server
+  - Web-Common-Http
+  - Web-App-Dev
+  - Web-Log-Libraries
+  - Web-Request-Monitor
+  - Web-Http-Tracing
+  - Web-Windows-Auth
+  - Web-Mgmt-Compat
+  - Web-Scripting-Tools
+  - Web-Mgmt-Service
+  - Web-Url-Auth
+  - Web-Net-Ext45
+  - Web-Asp-Net45
+  - Web-ASP
+  - Web-Basic-Auth
+  - Web-Custom-Logging
+  - NET-WCF-HTTP-Activation45
+
+application_pool_username: 'DDEVTIG\BYOAD016D_CMF_WIN_SA'
+
+iis_application_pool_names:
+  - ACPWebservice
+
+iis_websites:
+- { name: 'ACPWebService', port: '104', ip: '*', hostname: '', application_pool: 'ACPWebservice', physical_path: 'D:\Applis\OCRE\ACPWebservice ME'}

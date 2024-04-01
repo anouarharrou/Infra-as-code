@@ -1,0 +1,12 @@
+asp_net_mvc_4_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/AspNetMVC4/AspNetMVC4Setup.exe"
+
+ocre_dir: "D:\\Applis\\OCRE"
+
+web_server_parameters:
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/WebServer/ACP-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\ACP.zip"
+    dest_dir: "ACP"
+
+  - zip_url: "https://objs3parlow01.fr.world.socgen:4443/ocre-bucket/WebServer/GUI-9.7.zip"
+    download_dir: "D:\\Applis\\OCRE\\GUI.zip"
+    dest_dir: "GUI"

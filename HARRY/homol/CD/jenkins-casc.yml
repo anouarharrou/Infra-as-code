@@ -1,0 +1,62 @@
+jobs:
+  - script: >
+      folder('ocre-homol')
+  - script: >
+      pipelineJob('ocre-homol/Create-Infra') {
+            parameters {
+                stringParam("GOAL", "plan", "plan/apply/cleanup")
+            }        
+            definition {
+              cpsScm {
+                  scriptPath 'acid/homol/CD/Jenkinsfile-infra'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://sgithub.fr.world.socgen/ACID/ocre-infra.git' 
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }
+
+  - script: >
+      pipelineJob('ocre-homol/appli-deploy') {    
+            definition {
+              cpsScm {
+                  scriptPath 'acid/homol/CD/Jenkinsfile-appli'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://sgithub.fr.world.socgen/ACID/ocre-infra.git' 
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }
+      
+  - script: >
+      pipelineJob('ocre-homol/web-deploy') {   
+            definition {
+              cpsScm {
+                  scriptPath 'acid/homol/CD/Jenkinsfile-web'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://sgithub.fr.world.socgen/ACID/ocre-infra.git' 
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }      

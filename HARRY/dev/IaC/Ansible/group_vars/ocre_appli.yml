@@ -1,0 +1,51 @@
+iis_application_pool_names:
+  - ACPWebservices
+  - ACPGui_Git
+  - ACPSnapShot
+  - DirectoryServices
+  - AxeDMSAdaptor
+  - ACPWorkflowEngine
+  - XmlAccessAPI
+  - AdditionnalDataManagerAPI
+  - EligibilityManagerAPI
+  - LicenseManagerAPI
+  - SignatureManagerAPI
+  - AccessRightManagerAPI
+  - AdministrationServicesManagerAPI
+  - BacktestingManagerAPI
+  - CollateralAllocationManagerAPI
+  - ExportManagerAPI
+  - FinancialEngineManagerAPI
+  - LimitMonitoringManagerAPI
+  - MultiObjectManagerAPI
+  - RecoveryManagerAPI
+  - ReportingManagerAPI
+  - ScoringManagerAPI
+  - UserManagerAPI
+  - LicenseUserconnectionAPI
+
+iis_websites:
+- { name: 'ACPWebServices', port: '610', ip: '*', hostname: '', application_pool: 'ACPWebServices', physical_path: 'D:\Applis\OCRE\ACPWebServices'}
+- { name: 'ACPGui_Git', port: '611', ip: '*', hostname: '', application_pool: 'ACPGui_Git', physical_path: 'D:\Applis\OCRE\ACPGui_Git'}
+- { name: 'ACPSnapShot', port: '612', ip: '*', hostname: '', application_pool: 'ACPSnapShot', physical_path: 'D:\Applis\OCRE\ACPSnapShot'}
+- { name: 'DirectoryServices', port: '613', ip: '*', hostname: '', application_pool: 'DirectoryServices', physical_path: 'D:\Applis\OCRE\DirectoryServices'}
+# - { name: 'AxeDMSAdaptor', port: '614', ip: '*', hostname: '', application_pool: 'AxeDMSAdaptor', physical_path: 'D:\Applis\OCRE\AxeDMSAdaptor'}
+- { name: 'ACPWorkflowEngine', port: '615', ip: '*', hostname: '', application_pool: 'ACPWorkflowEngine', physical_path: 'D:\Applis\OCRE\ACPWorkflowEngine'}
+- { name: 'XmlAccessAPI', port: '616', ip: '*', hostname: '', application_pool: 'XmlAccessAPI', physical_path: 'D:\Applis\OCRE\XmlAccessAPI'}
+- { name: 'AdditionnalDataManagerAPI', port: '617', ip: '*', hostname: '', application_pool: 'AdditionnalDataManagerAPI', physical_path: 'D:\Applis\OCRE\AdditionnalDataManagerAPI'}
+- { name: 'EligibilityManagerAPI', port: '618', ip: '*', hostname: '', application_pool: 'EligibilityManagerAPI', physical_path: 'D:\Applis\OCRE\EligibilityManagerAPI'}
+- { name: 'LicenseManagerAPI', port: '619', ip: '*', hostname: '', application_pool: 'LicenseManagerAPI', physical_path: 'D:\Applis\OCRE\LicenseManagerAPI'}
+- { name: 'SignatureManagerAPI', port: '620', ip: '*', hostname: '', application_pool: 'SignatureManagerAPI', physical_path: 'D:\Applis\OCRE\SignatureManagerAPI'}
+- { name: 'AccessRightManagerAPI', port: '621', ip: '*', hostname: '', application_pool: 'AccessRightManagerAPI', physical_path: 'D:\Applis\OCRE\AccessRightManagerAPI'}
+- { name: 'AdministrationServicesManagerAPI', port: '622', ip: '*', hostname: '', application_pool: 'AdministrationServicesManagerAPI', physical_path: 'D:\Applis\OCRE\AdministrationServicesManagerAPI'}
+- { name: 'BacktestingManagerAPI', port: '623', ip: '*', hostname: '', application_pool: 'BacktestingManagerAPI', physical_path: 'D:\Applis\OCRE\BacktestingManagerAPI'}
+- { name: 'CollateralAllocationManagerAPI', port: '624', ip: '*', hostname: '', application_pool: 'CollateralAllocationManagerAPI', physical_path: 'D:\Applis\OCRE\CollateralAllocationManagerAPI'}
+- { name: 'ExportManagerAPI', port: '625', ip: '*', hostname: '', application_pool: 'ExportManagerAPI', physical_path: 'D:\Applis\OCRE\ExportManagerAPI'}
+- { name: 'FinancialEngineManagerAPI', port: '626', ip: '*', hostname: '', application_pool: 'FinancialEngineManagerAPI', physical_path: 'D:\Applis\OCRE\FinancialEngineManagerAPI'}
+- { name: 'LimitMonitoringManagerAPI', port: '627', ip: '*', hostname: '', application_pool: 'LimitMonitoringManagerAPI', physical_path: 'D:\Applis\OCRE\LimitMonitoringManagerAPI'}
+- { name: 'MultiObjectManagerAPI', port: '628', ip: '*', hostname: '', application_pool: 'MultiObjectManagerAPI', physical_path: 'D:\Applis\OCRE\MultiObjectManagerAPI'}
+- { name: 'RecoveryManagerAPI', port: '629', ip: '*', hostname: '', application_pool: 'RecoveryManagerAPI', physical_path: 'D:\Applis\OCRE\RecoveryManagerAPI'}
+- { name: 'ReportingManagerAPI', port: '630', ip: '*', hostname: '', application_pool: 'ReportingManagerAPI', physical_path: 'D:\Applis\OCRE\ReportingManagerAPI'}
+- { name: 'ScoringManagerAPI', port: '631', ip: '*', hostname: '', application_pool: 'ScoringManagerAPI', physical_path: 'D:\Applis\OCRE\ScoringManagerAPI'}
+- { name: 'UserManagerAPI', port: '632', ip: '*', hostname: '', application_pool: 'UserManagerAPI', physical_path: 'D:\Applis\OCRE\UserManagerAPI'}
+- { name: 'LicenseUserconnectionAPI', port: '633', ip: '*', hostname: '', application_pool: 'LicenseUserconnectionAPI', physical_path: 'D:\Applis\OCRE\LicenseUserconnectionAPI'}

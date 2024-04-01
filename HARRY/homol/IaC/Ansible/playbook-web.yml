@@ -1,0 +1,5 @@
+---
+- hosts: ocre_web 
+  roles:
+    - { role: ../../../common/Ansible/deploy_web_server }
+    - { role: ../../../common/Ansible/install_iis }

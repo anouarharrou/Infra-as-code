@@ -1,0 +1,26 @@
+LAYER_PATH="acid/homol/IaC/Ansible"
+podTemplate(
+  inheritFrom: 'jenkins-inbound-agent',
+  containers: [ containerTemplate(name: 'ansible-container', image: 'kube9-dtr-dev.fr.world.socgen/byo-ad016-dev-acid/ansible:2.11.6-5', alwaysPullImage: false, ttyEnabled: true, command: 'cat')
+  ]
+) {
+  node(POD_LABEL) {
+    stage('checkout scm') {
+        checkout scm
+    }
+
+      stage("Deploy Web"){
+        container('ansible-container'){
+              withCredentials([
+                usernamePassword(credentialsId: 'ocre_homol_creds', passwordVariable: 'OCRE_PASSWORD', usernameVariable: 'OCRE_USER'),
+                file(credentialsId: 'ocre_homol_vault_pass', variable: 'VAULT_PASS')
+                ])
+                {
+                  sh """
+                    ansible-playbook ${LAYER_PATH}/playbook-web.yml -i ${LAYER_PATH}/inventory -u ${OCRE_USER} -e 'ansible_password=${OCRE_PASSWORD}' --vault-password-file $VAULT_PASS
+                  """
+                }
+      }
+    }
+  }
+}

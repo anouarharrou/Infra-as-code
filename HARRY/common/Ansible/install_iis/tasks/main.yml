@@ -1,0 +1,29 @@
+---
+- name: Install IIS
+  ansible.windows.win_feature:
+    name: "{{ item }}"
+    state: present
+    include_management_tools: yes
+  with_items: "{{ iis_packages }}"
+
+- name: Create application pools
+  community.windows.win_iis_webapppool:
+    name: "{{ item }}"
+    state: started
+    attributes:
+      managedPipelineMode: Integrated
+      processModel.identityType: SpecificUser
+      processModel.userName: "{{ application_pool_username }}"
+      processModel.password: "{{ application_pool_password }}"
+  with_items: "{{ iis_application_pool_names }}"    
+
+- name: Create websites
+  community.windows.win_iis_website:
+    name: "{{ item.name }}"
+    state: started
+    port: "{{ item.port }}"
+    ip: "{{ item.ip }}"
+    hostname: "{{ item.hostname }}"
+    application_pool: "{{ item.application_pool }}"
+    physical_path: "{{ item.physical_path }}" 
+  with_items: "{{ iis_websites }}"

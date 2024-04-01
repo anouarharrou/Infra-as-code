@@ -1,0 +1,18 @@
+---
+- name: Create OCRE folder
+  win_file:
+    path: "{{ ocre_dir }}"
+    state: directory
+
+- name: Download App Server configuration
+  win_get_url:
+    url: "{{ item.zip_url }}"
+    dest: "{{ item.download_dir }}"
+  loop: "{{ app_server_parameters }}"
+
+- name: Unzip App Server configuration
+  win_unzip:
+    src: "{{ item.download_dir }}"
+    dest: "{{ ocre_dir }}\\{{ item.dest_dir }}"
+    delete_archive: yes
+  loop: "{{ app_server_parameters }}"

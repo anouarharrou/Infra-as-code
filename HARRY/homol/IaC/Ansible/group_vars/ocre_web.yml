@@ -1,0 +1,7 @@
+iis_application_pool_names:
+  - ACP
+  - ACP_GUI
+
+iis_websites:
+- { name: 'ACP', port: '600', ip: '*', hostname: '', application_pool: 'ACP', physical_path: 'D:\Applis\OCRE\ACP'}
+- { name: 'ACP_GUI', port: '602', ip: '*', hostname: '', application_pool: 'ACP_GUI', physical_path: 'D:\Applis\OCRE\GUI'}

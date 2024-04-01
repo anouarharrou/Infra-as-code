@@ -1,0 +1,65 @@
+jobs:
+  - script: >
+      folder('ocre-dev')
+  - script: >
+      pipelineJob('ocre-dev/Create-Infra') {
+            parameters {
+                stringParam("GOAL", "plan", "plan/apply/cleanup")
+            }        
+            definition {
+              cpsScm {
+                  scriptPath 'HARRY/dev/CD/Jenkinsfile-infra'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://github.com/anouarharrou/Infra-as-code.git' 
+                            credentials('github')
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }
+
+  - script: >
+      pipelineJob('ocre-dev/appli-deploy') {    
+            definition {
+              cpsScm {
+                  scriptPath 'HARRY/dev/CD/Jenkinsfile-appli'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://github.com/anouarharrou/Infra-as-code.git' 
+                            credentials('github')
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }
+      
+  - script: >
+      pipelineJob('ocre-dev/web-deploy') {   
+            definition {
+              cpsScm {
+                  scriptPath 'HARRY/dev/CD/Jenkinsfile-web'
+                  lightweight true
+                  scm {
+                    git {
+                        remote { 
+                            url 'https://github.com/anouarharrou/Infra-as-code.git' 
+                            credentials('github')
+                        }
+                        branch '*/master'
+                        extensions {}
+                    }
+                  }
+            }
+          }
+      }      
